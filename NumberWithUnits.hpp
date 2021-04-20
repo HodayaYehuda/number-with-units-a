@@ -27,10 +27,23 @@ namespace ariel {
         friend bool operator == (const NumberWithUnits& a, const NumberWithUnits& b) ;
 
 
-        NumberWithUnits operator ++ (); // ++a
-        NumberWithUnits operator -- (); // --a
-        NumberWithUnits operator ++ (int); //a++
-        NumberWithUnits operator -- (int); //a--
+       NumberWithUnits& operator ++ (){
+                       return *this;
+
+       } // ++a
+       NumberWithUnits& operator -- (){
+                       return *this;
+
+
+       } // --a
+       const NumberWithUnits operator ++ (int a){
+                       return NumberWithUnits(amount, unit);
+
+       } //a++
+       const NumberWithUnits operator -- (int a){
+                       return NumberWithUnits(amount, unit);
+
+       } //a--
 
 
         friend NumberWithUnits operator * (const NumberWithUnits&, const double);
