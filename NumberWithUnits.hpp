@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include <map>
@@ -27,23 +28,10 @@ namespace ariel {
         friend bool operator == (const NumberWithUnits& a, const NumberWithUnits& b) ;
 
 
-       NumberWithUnits& operator ++ (){
-                       return *this;
-
-       } // ++a
-       NumberWithUnits& operator -- (){
-                       return *this;
-
-
-       } // --a
-       const NumberWithUnits operator ++ (int a){
-                       return NumberWithUnits(amount, unit);
-
-       } //a++
-       const NumberWithUnits operator -- (int a){
-                       return NumberWithUnits(amount, unit);
-
-       } //a--
+       NumberWithUnits& operator ++ ();
+       NumberWithUnits& operator -- ();
+       const NumberWithUnits operator ++ (int a);
+       const NumberWithUnits operator -- (int a);
 
 
         friend NumberWithUnits operator * (const NumberWithUnits&, const double);
